@@ -186,8 +186,14 @@ h1,h2,h3,h4,.hero-name,.section-title,.page-hero h1{color:var(--color-ink)}
 .monograph-btn{margin-top:.8rem;font-size:.82rem;padding:.4rem 1rem}
 
 /* ===== Projects ===== */
-.project-item{padding:.85rem 0;border-bottom:1px solid var(--color-border-soft)}
+/* Per-item hover float (2026-09-14): each project entry lifts on its own. */
+.project-item{padding:.85rem .9rem;margin:0 -.9rem;border-bottom:1px solid var(--color-border-soft);border-radius:var(--radius-sm);transition:background-color .25s,box-shadow .25s,transform .25s}
 .project-item:last-child{border-bottom:none}
+.project-item:hover{position:relative;z-index:1;background:var(--color-surface);border-bottom-color:transparent;transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+/* Projects page: the outer card stays put; only the hovered item floats. */
+.projects-card:hover{transform:none;box-shadow:none}
+.projects-card:hover::before{opacity:0}
+@media (prefers-reduced-motion:reduce){.project-item{transition:none}.project-item:hover{transform:none}}
 .project-title{color:var(--color-ink);font-weight:700;font-size:1rem;line-height:1.55}
 .project-meta{display:flex;gap:.65rem 1rem;flex-wrap:wrap;margin-top:.25rem;font-size:.85rem;color:var(--color-muted);align-items:center}
 .project-source{color:var(--color-text);font-weight:650}
