@@ -84,7 +84,7 @@ h1,h2,h3,h4,.hero-name,.section-title,.page-hero h1{color:var(--color-ink)}
 .content-card::before{content:"";position:absolute;top:0;right:0;bottom:0;left:0;border-radius:inherit;padding:1px;background:var(--gradient-holo);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .25s;pointer-events:none}
 @supports not ((-webkit-mask-composite:xor) or (mask-composite:exclude)){.content-card::before{display:none}}
 .content-card:hover::before{opacity:1}
-.content-card:hover{transform:translateY(-1px);box-shadow:var(--shadow-hover)}
+.content-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)}
 .content-card h2{font-size:1.2rem;font-weight:700;color:var(--color-ink);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--color-border-soft)}
 .content-card h3{font-size:1.08rem;font-weight:600;color:var(--color-ink);margin-bottom:.5rem}
 .content-card p{line-height:1.75;margin-bottom:.6rem;font-size:1.05rem}
@@ -142,7 +142,10 @@ h1,h2,h3,h4,.hero-name,.section-title,.page-hero h1{color:var(--color-ink)}
 
 /* ===== Beyond ===== */
 .beyond-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.beyond-card{padding:1.3rem 1.2rem;border:1px solid var(--color-border);border-radius:var(--radius);background:var(--color-surface);text-align:center;transition:border-color .25s,box-shadow .25s,transform .25s}
+.beyond-card{position:relative;padding:1.3rem 1.2rem;border:1px solid var(--color-border);border-radius:var(--radius);background:var(--color-surface);text-align:center;transition:border-color .25s,box-shadow .25s,transform .25s}
+.beyond-card::before{content:"";position:absolute;top:0;right:0;bottom:0;left:0;border-radius:inherit;padding:1px;background:var(--gradient-holo);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .25s;pointer-events:none}
+@supports not ((-webkit-mask-composite:xor) or (mask-composite:exclude)){.beyond-card::before{display:none}}
+.beyond-card:hover::before{opacity:1}
 .beyond-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)}
 .beyond-card h3{font-size:1.05rem;font-weight:700;color:var(--color-primary);margin-bottom:.4rem}
 .beyond-card p{font-size:.92rem;color:var(--color-muted);line-height:1.7}
@@ -165,9 +168,12 @@ h1,h2,h3,h4,.hero-name,.section-title,.page-hero h1{color:var(--color-ink)}
 .pub-year-filter button:hover{border-color:var(--color-primary);color:var(--color-primary)}
 .pub-year-filter button.active{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}
 .pub-card-list{display:flex;flex-direction:column}
-.pub-card{padding:.85rem .9rem;margin:0 -.9rem;border:0;border-bottom:1px solid var(--color-border-soft);border-radius:var(--radius-sm);transition:background-color .25s,box-shadow .25s,transform .25s}
+.pub-card{position:relative;padding:.85rem .9rem;margin:0 -.9rem;border:0;border-bottom:1px solid var(--color-border-soft);border-radius:var(--radius-sm);transition:background-color .25s,box-shadow .25s,transform .25s}
 .pub-card:last-child{border-bottom:0}
-.pub-card:hover{position:relative;z-index:1;background:var(--color-surface);border-bottom-color:transparent;transform:translateY(-2px);box-shadow:0 0 0 1px rgba(37,99,235,.32),0 0 0 4px rgba(37,99,235,.07),var(--shadow-hover)}
+.pub-card::before{content:"";position:absolute;top:0;right:0;bottom:0;left:0;border-radius:inherit;padding:1px;background:var(--gradient-holo);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .25s;pointer-events:none}
+@supports not ((-webkit-mask-composite:xor) or (mask-composite:exclude)){.pub-card::before{display:none}}
+.pub-card:hover::before{opacity:1}
+.pub-card:hover{z-index:1;background:var(--color-surface);border-bottom-color:transparent;transform:translateY(-2px);box-shadow:var(--shadow-hover)}
 .pub-card-top{display:flex;gap:1rem;align-items:flex-start;justify-content:space-between}
 .pub-card-title{color:var(--color-ink);font-size:1rem;font-weight:700;line-height:1.55}
 .pub-year{flex-shrink:0;font-family:var(--font-mono);color:var(--color-primary);background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.16);border-radius:999px;padding:.12rem .5rem;font-size:.74rem;font-weight:700}
@@ -188,13 +194,16 @@ h1,h2,h3,h4,.hero-name,.section-title,.page-hero h1{color:var(--color-ink)}
 
 /* ===== Projects ===== */
 /* Per-item hover (2026-09-14): each entry lifts on its own with a soft blue ring (team-page style). */
-.project-item{padding:.85rem .9rem;margin:0 -.9rem;border-bottom:1px solid var(--color-border-soft);border-radius:var(--radius-sm);transition:background-color .25s,box-shadow .25s,transform .25s}
+.project-item{position:relative;padding:.85rem .9rem;margin:0 -.9rem;border-bottom:1px solid var(--color-border-soft);border-radius:var(--radius-sm);transition:background-color .25s,box-shadow .25s,transform .25s}
 .project-item:last-child{border-bottom:none}
-.project-item:hover{position:relative;z-index:1;background:var(--color-surface);border-bottom-color:transparent;transform:translateY(-2px);box-shadow:0 0 0 1px rgba(37,99,235,.32),0 0 0 4px rgba(37,99,235,.07),var(--shadow-hover)}
+.project-item::before{content:"";position:absolute;top:0;right:0;bottom:0;left:0;border-radius:inherit;padding:1px;background:var(--gradient-holo);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .25s;pointer-events:none}
+@supports not ((-webkit-mask-composite:xor) or (mask-composite:exclude)){.project-item::before{display:none}}
+.project-item:hover::before{opacity:1}
+.project-item:hover{z-index:1;background:var(--color-surface);border-bottom-color:transparent;transform:translateY(-2px);box-shadow:var(--shadow-hover)}
 /* Outer cards on projects/publications stay put; only the hovered item floats. */
 .flat-card:hover{transform:none;box-shadow:none}
 .flat-card:hover::before{opacity:0}
-@media (prefers-reduced-motion:reduce){.project-item,.pub-card{transition:none}.project-item:hover,.pub-card:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){.project-item,.pub-card,.beyond-card{transition:none}.project-item:hover,.pub-card:hover,.beyond-card:hover{transform:none}}
 .project-title{color:var(--color-ink);font-weight:700;font-size:1rem;line-height:1.55}
 .project-meta{display:flex;gap:.65rem 1rem;flex-wrap:wrap;margin-top:.25rem;font-size:.85rem;color:var(--color-muted);align-items:center}
 .project-source{color:var(--color-text);font-weight:650}
