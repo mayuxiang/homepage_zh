@@ -165,8 +165,9 @@ h1,h2,h3,h4,.hero-name,.section-title,.page-hero h1{color:var(--color-ink)}
 .pub-year-filter button:hover{border-color:var(--color-primary);color:var(--color-primary)}
 .pub-year-filter button.active{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}
 .pub-card-list{display:flex;flex-direction:column}
-.pub-card{padding:.85rem 0;border:0;border-bottom:1px solid var(--color-border-soft);border-radius:0}
+.pub-card{padding:.85rem .9rem;margin:0 -.9rem;border:0;border-bottom:1px solid var(--color-border-soft);border-radius:var(--radius-sm);transition:background-color .25s,box-shadow .25s,transform .25s}
 .pub-card:last-child{border-bottom:0}
+.pub-card:hover{position:relative;z-index:1;background:var(--color-surface);border-bottom-color:transparent;transform:translateY(-2px);box-shadow:0 0 0 1px rgba(37,99,235,.32),0 0 0 4px rgba(37,99,235,.07),var(--shadow-hover)}
 .pub-card-top{display:flex;gap:1rem;align-items:flex-start;justify-content:space-between}
 .pub-card-title{color:var(--color-ink);font-size:1rem;font-weight:700;line-height:1.55}
 .pub-year{flex-shrink:0;font-family:var(--font-mono);color:var(--color-primary);background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.16);border-radius:999px;padding:.12rem .5rem;font-size:.74rem;font-weight:700}
@@ -186,14 +187,14 @@ h1,h2,h3,h4,.hero-name,.section-title,.page-hero h1{color:var(--color-ink)}
 .monograph-btn{margin-top:.8rem;font-size:.82rem;padding:.4rem 1rem}
 
 /* ===== Projects ===== */
-/* Per-item hover float (2026-09-14): each project entry lifts on its own. */
+/* Per-item hover (2026-09-14): each entry lifts on its own with a soft blue ring (team-page style). */
 .project-item{padding:.85rem .9rem;margin:0 -.9rem;border-bottom:1px solid var(--color-border-soft);border-radius:var(--radius-sm);transition:background-color .25s,box-shadow .25s,transform .25s}
 .project-item:last-child{border-bottom:none}
-.project-item:hover{position:relative;z-index:1;background:var(--color-surface);border-bottom-color:transparent;transform:translateY(-2px);box-shadow:var(--shadow-hover)}
-/* Projects page: the outer card stays put; only the hovered item floats. */
-.projects-card:hover{transform:none;box-shadow:none}
-.projects-card:hover::before{opacity:0}
-@media (prefers-reduced-motion:reduce){.project-item{transition:none}.project-item:hover{transform:none}}
+.project-item:hover{position:relative;z-index:1;background:var(--color-surface);border-bottom-color:transparent;transform:translateY(-2px);box-shadow:0 0 0 1px rgba(37,99,235,.32),0 0 0 4px rgba(37,99,235,.07),var(--shadow-hover)}
+/* Outer cards on projects/publications stay put; only the hovered item floats. */
+.flat-card:hover{transform:none;box-shadow:none}
+.flat-card:hover::before{opacity:0}
+@media (prefers-reduced-motion:reduce){.project-item,.pub-card{transition:none}.project-item:hover,.pub-card:hover{transform:none}}
 .project-title{color:var(--color-ink);font-weight:700;font-size:1rem;line-height:1.55}
 .project-meta{display:flex;gap:.65rem 1rem;flex-wrap:wrap;margin-top:.25rem;font-size:.85rem;color:var(--color-muted);align-items:center}
 .project-source{color:var(--color-text);font-weight:650}

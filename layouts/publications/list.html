@@ -18,7 +18,7 @@
     </div>
 
     <!-- Selected Papers -->
-    <div class="content-card reveal">
+    <div class="content-card flat-card reveal">
       <h2>代表性论文</h2>
       <div class="pub-card-list">
         {{ range $p.selected }}
@@ -56,7 +56,7 @@
 
     <!-- Patents -->
     {{ with $p.patents }}{{ if gt (len .) 0 }}
-    <div class="content-card reveal">
+    <div class="content-card flat-card reveal">
       <h2>授权专利</h2>
       {{ range . }}
       <div class="pub-card">
@@ -69,7 +69,7 @@
 
     <!-- Software Copyrights -->
     {{ with $p.softwareCopyrights }}{{ if gt (len .) 0 }}
-    <div class="content-card reveal">
+    <div class="content-card flat-card reveal">
       <h2>软件著作权</h2>
       {{ range . }}
       <div class="pub-card">
