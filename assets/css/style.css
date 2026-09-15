@@ -200,9 +200,7 @@ h1,h2,h3,h4,.hero-name,.section-title,.page-hero h1{color:var(--color-ink)}
 @supports not ((-webkit-mask-composite:xor) or (mask-composite:exclude)){.project-item::before{display:none}}
 .project-item:hover::before{opacity:1}
 .project-item:hover{z-index:1;background:var(--color-surface);border-bottom-color:transparent;transform:translateY(-2px);box-shadow:var(--shadow-hover)}
-/* Outer cards on projects/publications stay put; only the hovered item floats. */
-.flat-card:hover{transform:none;box-shadow:none}
-.flat-card:hover::before{opacity:0}
+/* Outer cards now use the same site-wide .content-card hover as every other page. */
 @media (prefers-reduced-motion:reduce){.project-item,.pub-card,.beyond-card{transition:none}.project-item:hover,.pub-card:hover,.beyond-card:hover{transform:none}}
 .project-title{color:var(--color-ink);font-weight:700;font-size:1rem;line-height:1.55}
 .project-meta{display:flex;gap:.65rem 1rem;flex-wrap:wrap;margin-top:.25rem;font-size:.85rem;color:var(--color-muted);align-items:center}
