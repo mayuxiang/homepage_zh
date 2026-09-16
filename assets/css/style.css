@@ -293,7 +293,12 @@ a:focus-visible,.btn:focus-visible,.nav-link:focus-visible,.theme-toggle:focus-v
   .timeline-h-dot{position:relative;margin:0;flex-shrink:0;width:14px;height:14px}
   .timeline-h-content{align-items:flex-start}
 }
+/* Phones: tighten spacing and type rather than repeating the 768px grid rules. */
 @media (max-width:640px){
+  .container{padding:0 1rem}
+  .hero{padding:3rem 0 2.5rem}
   .hero-name{font-size:2.2rem}
-  .metrics-grid,.research-focus-grid,.beyond-grid,.research-grid{grid-template-columns:1fr}
+  .page-hero h1{font-size:1.6rem}
+  .hero-photo{width:140px;height:140px}
+  .content-card{padding:1.1rem}
 }
