@@ -43,6 +43,8 @@
   {{ $desc := $s.oneliner }}
   {{ if .IsHome }}
   <title>{{ $s.name }}@{{ $s.uni }}</title>
+  {{ else if eq .Kind "404" }}
+  <title>页面未找到 | {{ $s.name }}@{{ $s.uni }}</title>
   {{ else }}
   <title>{{ .Title }} | {{ $s.name }}@{{ $s.uni }}</title>
   {{ $desc = .Description }}
@@ -54,7 +56,12 @@
   <meta property="og:title" content="{{ if .IsHome }}{{ $s.name }}@{{ $s.uni }}{{ else }}{{ .Title }} | {{ $s.name }}{{ end }}">
   <meta property="og:description" content="{{ if $desc }}{{ $desc }}{{ else }}{{ $s.name }} — {{ $s.affiliation }}{{ end }}">
   <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:image" content="{{ "images/me.webp" | absURL }}">
+  {{/* JPG (not WebP): WeChat / Facebook / LinkedIn previews often fail to render WebP. */}}
+  <meta property="og:image" content="{{ "images/me.jpg" | absURL }}">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta property="og:image:alt" content="{{ $s.name }} — {{ $s.affiliation }}">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="{{ $s.name }} — {{ $s.affiliation }}">
 
@@ -62,7 +69,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ if .IsHome }}{{ $s.name }}（{{ $s.nameEn }}）— {{ $s.affiliation }}{{ else }}{{ .Title }} — {{ $s.name }}{{ end }}">
   <meta name="twitter:description" content="{{ if $desc }}{{ $desc }}{{ else }}{{ $s.name }} — {{ $s.affiliation }}{{ end }}">
-  <meta name="twitter:image" content="{{ "images/me.webp" | absURL }}">
+  <meta name="twitter:image" content="{{ "images/me.jpg" | absURL }}">
 
   <!-- hreflang -->
   <link rel="alternate" hreflang="x-default" href="{{ .Site.BaseURL }}">

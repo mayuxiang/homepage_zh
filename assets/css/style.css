@@ -56,7 +56,7 @@ h1,h2,h3,h4,.hero-name,.section-title,.page-hero h1{color:var(--color-ink)}
 .hero-typing{display:flex;align-items:center;gap:.3rem;margin-top:.45rem;font-size:1.1rem;color:var(--color-muted)}
 .typing-prefix{color:var(--color-muted)}
 .typing-text{color:var(--color-primary);font-weight:700;min-width:4em}
-.typing-cursor{color:var(--color-primary);font-weight:300;animation:blink .8s step-end infinite}
+.typing-cursor{color:var(--color-primary);font-weight:400;animation:blink .8s step-end infinite}
 @keyframes blink{50%{opacity:0}}
 .hero-honors{margin-top:.5rem;font-size:1.1rem;color:var(--color-muted);line-height:1.6}
 .hero-avatar{display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -107,8 +107,8 @@ h1,h2,h3,h4,.hero-name,.section-title,.page-hero h1{color:var(--color-ink)}
 .metric-card+.metric-card{border-left:1px solid var(--color-border-soft)}
 .metric-clickable:hover{background:linear-gradient(180deg,rgba(37,99,235,.04),rgba(37,99,235,.015));transform:none;box-shadow:none}
 .metric-number{font-family:var(--font-mono);font-size:clamp(2.4rem,4vw,3rem);font-weight:700;line-height:1;color:var(--color-primary);letter-spacing:-.03em;display:inline-flex;align-items:baseline}
-.metric-suffix{margin-left:.12rem;font-family:var(--font-mono);font-size:clamp(1.6rem,3vw,2rem);font-weight:800;color:var(--color-primary)}
-.metric-label{margin-top:.3rem;font-size:.94rem;font-weight:650;color:var(--color-ink)}
+.metric-suffix{margin-left:.12rem;font-family:var(--font-mono);font-size:clamp(1.6rem,3vw,2rem);font-weight:700;color:var(--color-primary)}
+.metric-label{margin-top:.3rem;font-size:.94rem;font-weight:600;color:var(--color-ink)}
 .metric-note{margin-top:.15rem;font-size:.8rem;color:var(--color-muted)}
 
 /* ===== Focus Cards (shared: team overview / directions) ===== */
@@ -181,7 +181,7 @@ h1,h2,h3,h4,.hero-name,.section-title,.page-hero h1{color:var(--color-ink)}
 .author-self{color:var(--color-primary);font-weight:700}
 .pub-card-venue{font-size:.85rem;color:var(--color-muted);margin-top:.15rem}
 .pub-card-tags{display:flex;gap:.3rem;margin-top:.4rem;flex-wrap:wrap}
-.pub-tag{display:inline-flex;align-items:center;padding:.18rem .58rem;border-radius:999px;background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.16);color:var(--color-primary);font-size:.76rem;font-weight:650}
+.pub-tag{display:inline-flex;align-items:center;padding:.18rem .58rem;border-radius:999px;background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.16);color:var(--color-primary);font-size:.76rem;font-weight:600}
 .monograph-card{display:flex;gap:1.25rem;align-items:flex-start;padding:1.1rem;background:var(--color-bg-soft);border:1px solid var(--color-border-soft);border-radius:var(--radius)}
 .monograph-cover{width:160px;height:auto;border-radius:var(--radius-sm);box-shadow:0 14px 32px rgba(15,23,42,.10);flex-shrink:0}
 .monograph-info{flex:1}
@@ -204,15 +204,15 @@ h1,h2,h3,h4,.hero-name,.section-title,.page-hero h1{color:var(--color-ink)}
 @media (prefers-reduced-motion:reduce){.project-item,.pub-card,.beyond-card{transition:none}.project-item:hover,.pub-card:hover,.beyond-card:hover{transform:none}}
 .project-title{color:var(--color-ink);font-weight:700;font-size:1rem;line-height:1.55}
 .project-meta{display:flex;gap:.65rem 1rem;flex-wrap:wrap;margin-top:.25rem;font-size:.85rem;color:var(--color-muted);align-items:center}
-.project-source{color:var(--color-text);font-weight:650}
+.project-source{color:var(--color-text);font-weight:600}
 .project-period{font-family:var(--font-mono);font-size:.8rem}
-.project-role{display:inline-flex;align-items:center;padding:.18rem .58rem;border-radius:999px;background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.16);color:var(--color-primary);font-size:.76rem;font-weight:650}
-.project-status{display:inline-flex;align-items:center;padding:.16rem .55rem;border-radius:999px;font-size:.76rem;font-weight:650}
+.project-role{display:inline-flex;align-items:center;padding:.18rem .58rem;border-radius:999px;background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.16);color:var(--color-primary);font-size:.76rem;font-weight:600}
+.project-status{display:inline-flex;align-items:center;padding:.16rem .55rem;border-radius:999px;font-size:.76rem;font-weight:600}
 .project-status.status-active{background:rgba(22,163,74,.08);border:1px solid rgba(22,163,74,.18);color:var(--color-success)}
 .project-status.status-completed{background:var(--color-bg);border:1px solid var(--color-border);color:var(--color-muted)}
 .project-status.status-other{background:var(--color-bg);border:1px solid var(--color-border);color:var(--color-muted)}
 .project-keywords{display:flex;gap:.3rem;margin-top:.4rem;flex-wrap:wrap}
-.project-kw{display:inline-flex;align-items:center;padding:.18rem .55rem;border-radius:999px;background:var(--color-bg);border:1px solid var(--color-border);color:var(--color-muted);font-size:.76rem;font-weight:550}
+.project-kw{display:inline-flex;align-items:center;padding:.18rem .55rem;border-radius:999px;background:var(--color-bg);border:1px solid var(--color-border);color:var(--color-muted);font-size:.76rem;font-weight:500}
 
 /* ===== Team ===== */
 .recruit-status-card{border:1px solid rgba(37,99,235,.18)}
@@ -250,6 +250,16 @@ a:focus-visible,.btn:focus-visible,.nav-link:focus-visible,.theme-toggle:focus-v
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
 
 /* ===== Responsive ===== */
+/* Large screens: give the 1100px content column a little more room. */
+@media (min-width:1280px){
+  :root{--max-width:1180px}
+}
+/* Tablet: three-up feature grids get cramped below 1024px. */
+@media (max-width:1024px){
+  .container{padding:0 1.5rem}
+  .research-focus-grid{grid-template-columns:repeat(2,1fr)}
+  .monograph-cover{width:150px}
+}
 @media (max-width:768px){
   .container{padding:0 1.25rem}
   .section{padding:3.5rem 0}
@@ -285,6 +295,5 @@ a:focus-visible,.btn:focus-visible,.nav-link:focus-visible,.theme-toggle:focus-v
 }
 @media (max-width:640px){
   .hero-name{font-size:2.2rem}
-  .metrics-grid{grid-template-columns:1fr}
-  .metric-card+.metric-card{border-left:0;border-top:1px solid var(--color-border-soft)}
+  .metrics-grid,.research-focus-grid,.beyond-grid,.research-grid{grid-template-columns:1fr}
 }

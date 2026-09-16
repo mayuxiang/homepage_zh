@@ -47,28 +47,62 @@ function setStoredTheme(value) {
   });
 })();
 
+/* ---- Theme ---- */
+function isDarkTheme() {
+  return document.documentElement.hasAttribute('data-theme');
+}
+
+function syncThemeToggle() {
+  var toggle = document.getElementById('themeToggle');
+  if (!toggle) return;
+  toggle.setAttribute('aria-pressed', isDarkTheme() ? 'true' : 'false');
+  toggle.setAttribute('aria-label', isDarkTheme() ? '切换到浅色主题' : '切换到深色主题');
+  toggle.textContent = isDarkTheme() ? '☀' : '☾';
+}
+
+function applyTheme(dark) {
+  if (dark) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+  }
+  syncThemeToggle();
+}
+
+/* Returns the user's explicit choice, or null when they never picked one. */
+function storedTheme() {
+  try {
+    return window.localStorage.getItem('theme');
+  } catch (e) {
+    return null; /* storage blocked: treat as "no explicit choice" */
+  }
+}
+
 /* ---- Theme toggle ---- */
 (function () {
   var toggle = document.getElementById('themeToggle');
   if (!toggle) return;
-  function sync() {
-    var dark = document.documentElement.hasAttribute('data-theme');
-    toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
-    toggle.setAttribute('aria-label', dark ? '切换到浅色主题' : '切换到深色主题');
-    toggle.textContent = dark ? '☀' : '☾';
-  }
   toggle.addEventListener('click', function () {
-    var dark = document.documentElement.hasAttribute('data-theme');
-    if (dark) {
-      document.documentElement.removeAttribute('data-theme');
-      setStoredTheme('light');
-    } else {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      setStoredTheme('dark');
-    }
-    sync();
+    var dark = !isDarkTheme();
+    applyTheme(dark);
+    setStoredTheme(dark ? 'dark' : 'light');
   });
-  sync();
+  syncThemeToggle();
+})();
+
+/* ---- Follow live OS theme changes (only until the user picks a theme) ---- */
+(function () {
+  if (!window.matchMedia) return;
+  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+  function onChange(e) {
+    if (storedTheme()) return; /* explicit choice wins over the OS */
+    applyTheme(e.matches);
+  }
+  if (mq.addEventListener) {
+    mq.addEventListener('change', onChange);
+  } else if (mq.addListener) {
+    mq.addListener(onChange); /* Safari < 14 */
+  }
 })();
 
 /* ---- Author name highlight in publication lists ---- */
