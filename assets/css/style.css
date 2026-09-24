@@ -79,12 +79,10 @@ h1,h2,h3,h4,.hero-name,.section-title,.page-hero h1{color:var(--color-ink)}
 .page-content{padding:2rem 0 4rem}
 
 /* ===== Content Cards ===== */
-.content-card{position:relative;padding:1.5rem;margin-bottom:1.25rem;border:1px solid var(--color-border);border-radius:var(--radius);background:var(--color-surface);backdrop-filter:blur(14px);box-shadow:none;transition:border-color .25s,box-shadow .25s,transform .25s}
+/* Outer cards stay static site-wide (2026-09-24): only inner items react on hover, so a
+   card wrapping a list never lights a second ring around its items. */
+.content-card{position:relative;padding:1.5rem;margin-bottom:1.25rem;border:1px solid var(--color-border);border-radius:var(--radius);background:var(--color-surface);backdrop-filter:blur(14px);box-shadow:none}
 @supports not (backdrop-filter:blur(14px)){.content-card{background:var(--color-bg);backdrop-filter:none}}
-.content-card::before{content:"";position:absolute;top:0;right:0;bottom:0;left:0;border-radius:inherit;padding:1px;background:var(--gradient-holo);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .25s;pointer-events:none}
-@supports not ((-webkit-mask-composite:xor) or (mask-composite:exclude)){.content-card::before{display:none}}
-.content-card:hover::before{opacity:1}
-.content-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)}
 .content-card h2{font-size:1.2rem;font-weight:700;color:var(--color-ink);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--color-border-soft)}
 .content-card h3{font-size:1.08rem;font-weight:600;color:var(--color-ink);margin-bottom:.5rem}
 .content-card p{line-height:1.75;margin-bottom:.6rem;font-size:1.05rem}
@@ -200,7 +198,7 @@ h1,h2,h3,h4,.hero-name,.section-title,.page-hero h1{color:var(--color-ink)}
 @supports not ((-webkit-mask-composite:xor) or (mask-composite:exclude)){.project-item::before{display:none}}
 .project-item:hover::before{opacity:1}
 .project-item:hover{z-index:1;background:var(--color-surface);border-bottom-color:transparent;transform:translateY(-2px);box-shadow:var(--shadow-hover)}
-/* Outer cards now use the same site-wide .content-card hover as every other page. */
+/* Inner items keep the site-wide lift + gradient ring; their outer .content-card no longer reacts (see Content Cards). */
 @media (prefers-reduced-motion:reduce){.project-item,.pub-card,.beyond-card{transition:none}.project-item:hover,.pub-card:hover,.beyond-card:hover{transform:none}}
 .project-title{color:var(--color-ink);font-weight:700;font-size:1rem;line-height:1.55}
 .project-meta{display:flex;gap:.65rem 1rem;flex-wrap:wrap;margin-top:.25rem;font-size:.85rem;color:var(--color-muted);align-items:center}
