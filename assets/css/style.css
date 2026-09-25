@@ -149,14 +149,16 @@ h1,h2,h3,h4,.hero-name,.section-title,.page-hero h1{color:var(--color-ink)}
 .beyond-card p{font-size:.92rem;color:var(--color-muted);line-height:1.7}
 
 /* ===== Research Page ===== */
+.content-card.research-card{border-left:3px solid var(--color-primary)}
 .research-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;padding-bottom:.6rem;border-bottom:1px solid var(--color-border-soft)}
 .research-header h2{margin-bottom:0;padding-bottom:0;border-bottom:none;flex:1;color:var(--color-ink)}
 .research-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
 .research-item{padding:1rem;background:var(--color-bg-soft);border:1px solid var(--color-border-soft);border-radius:var(--radius-sm)}
-.research-item h4{font-size:1.08rem;font-weight:700;color:var(--color-muted);margin-bottom:.5rem;letter-spacing:.04em}
+.research-item h4{font-size:1.08rem;font-weight:700;color:var(--color-primary);margin-bottom:.5rem;letter-spacing:.04em}
 .research-item p{font-size:1.05rem;line-height:1.7}
 .research-representative{margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--color-border-soft)}
-.research-representative h4,.research-related h4{font-size:1.08rem;font-weight:700;color:var(--color-muted);margin-bottom:.4rem}
+.research-representative h4,.research-related h4{font-size:1.08rem;font-weight:700;color:var(--color-primary);margin-bottom:.4rem}
+.research-item h4 svg,.research-representative h4 svg,.research-related h4 svg{vertical-align:-3px;margin-right:4px}
 .research-representative ul,.research-related ul{padding-left:1.2rem}
 .research-representative li,.research-related li{font-size:1.05rem;line-height:1.7;margin-bottom:.3rem}
 
